@@ -2,7 +2,7 @@
 /**
  * Dashboard Glancer
  *
- * @package   Sputnik_Dashboard_Glancer
+ * @package   Team_Post_Type
  * @author    Gary Jones
  * @link      http://gamajo.com/dashboard-glancer
  * @copyright 2014 Gary Jones, Gamajo Tech
