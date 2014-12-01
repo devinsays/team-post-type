@@ -39,9 +39,7 @@ class Team_Post_Type_Metaboxes {
 	*
 	* @since 0.1.0
 	*/
-	function render_meta_boxes() {
-
-		global $post;
+	function render_meta_boxes( $post ) {
 
 		$meta = get_post_custom( $post->ID );
 		$title = ! isset( $meta['profile_title'][0] ) ? '' : $meta['profile_title'][0];
@@ -135,17 +133,8 @@ class Team_Post_Type_Metaboxes {
 
 		$meta['profile_facebook'] = ( isset( $_POST['profile_facebook'] ) ? esc_url( $_POST['profile_facebook'] ) : '' );
 
-
 		foreach ( $meta as $key => $value ) {
-
-			if ( get_post_meta( $post->ID, $key, false ) ) {
-				// If the custom field already has a value
-				update_post_meta( $post->ID, $key, $value );
-			} else {
-				// If the custom field doesn't have a value
-				add_post_meta( $post->ID, $key, $value );
-
-			}
+			update_post_meta( $post->ID, $key, $value );
 		}
 	}
 
