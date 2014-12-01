@@ -76,9 +76,6 @@ class Team_Post_Type {
 	 */
 	public function load_plugin_textdomain() {
 		$domain = self::PLUGIN_SLUG;
-		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
-
-		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
 		load_plugin_textdomain( $domain, FALSE, dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages' );
 	}
 
