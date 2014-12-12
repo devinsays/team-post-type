@@ -26,7 +26,7 @@ class Team_Post_Type_Admin {
 
 		// Add thumbnails to column view
 		add_filter( 'manage_edit-' . $this->registration_handler->post_type . '_columns', array( $this, 'add_image_column'), 10, 1 );
-		add_action( 'manage_posts_custom_column', array( $this, 'display_image' ), 10, 1 );
+		add_action( 'manage_' . $this->registration_handler->post_type . '_posts_custom_column', array( $this, 'display_image' ), 10, 1 );
 
 		// Allow filtering of posts by taxonomy in the admin view
 		add_action( 'restrict_manage_posts', array( $this, 'add_taxonomy_filters' ) );
