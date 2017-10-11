@@ -143,7 +143,7 @@ class Team_Post_Type_Admin {
 			$options .= sprintf(
 				'<option value="%s"%s />%s</option>',
 				esc_attr( $term->slug ),
-				selected( $current_tax_slug, $term->slug ),
+				selected( $current_tax_slug, $term->slug, false ),
 				esc_html( $term->name . '(' . $term->count . ')' )
 			);
 		}
